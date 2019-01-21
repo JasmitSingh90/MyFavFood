@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyFavFood.Views.UserInfoPage"
+             Title="User Info">
+    <StackLayout
+            Orientation="Vertical">
+        <ScrollView Margin="0,0,0,20">
+            <StackLayout>
+                <ContentView Padding="16,0,0,0" BackgroundColor="#ebebeb" HeightRequest="35">
+                    <Label Text="User Basics" FontSize="Large" VerticalTextAlignment="Center" />
+                </ContentView>
+                <Grid Padding="16,0,16,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.Resources>
+                        <Style TargetType="Label">
+                            <Setter Property="VerticalOptions" Value="Center" />
+                        </Style>
+                    </Grid.Resources>
+
+                    <Label Text="Name:"
+                       Grid.Row="0" Grid.Column="0" />
+
+                    <Entry Text="{Binding UserInfo.Name}"
+                        Grid.Row="0" Grid.Column="1" />
+
+                    <Label Text="Date of birth:"
+                       Grid.Row="1" Grid.Column="0" />
+
+                    <DatePicker Date="{Binding UserInfo.DateOfBirth}"
+                       Grid.Row="1" Grid.Column="1" />
+
+                    <Label Text="Gender:"
+                       Grid.Row="2" Grid.Column="0" />
+
+                    <Picker Title="Select gender" ItemsSource="{Binding GenderTypes}" SelectedItem="{Binding SelectedGenderTitle, Mode=TwoWay}"
+                       Grid.Row="2" Grid.Column="1" />
+                </Grid>
+                <ContentView Padding="16,0,0,0" BackgroundColor="#ebebeb" HeightRequest="35">
+                    <Label Text="Miscellaneous" FontSize="Large" VerticalTextAlignment="Center"/>
+                </ContentView>
+                <ContentView Padding="16,16,16,0">
+                    <Editor Placeholder="Comments" Text="{Binding UserInfo.Comment}" HorizontalOptions="FillAndExpand" />
+                </ContentView>
+            </StackLayout>
+        </ScrollView>
+        <Button Text="Save changes"
+                Margin="16,0,16,0"
+                VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand"
+                Command="{Binding UpdateUserDataCommand}" />
+    </StackLayout>
+</ContentPage>

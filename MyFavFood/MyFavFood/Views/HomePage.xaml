@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyFavFood.Views.HomePage"
+             Title="Home">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItemMyFood" Order="Primary" Text="My Food" Command="{Binding NavigateToUserDetailsScreenCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <RelativeLayout Margin="16">
+                <Label Text="Hey foodie," FontAttributes="Bold" FontSize="26" TextColor="#666666" 
+            HorizontalTextAlignment="Start" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=16}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+                <Label Text="Let's first setup your profile, so that you can then enjoy by creating and sharing your favourite food items." FontSize="Default" TextColor="#666666" 
+            HorizontalTextAlignment="Start" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=50}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+                <Label Text="Show and share your food love!!!" FontSize="20" TextColor="#666666"
+            HorizontalTextAlignment="Center" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=120}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+            </RelativeLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

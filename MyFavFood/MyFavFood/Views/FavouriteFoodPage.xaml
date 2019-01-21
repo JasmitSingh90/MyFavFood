@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyFavFood.Views.FavouriteFoodPage"
+             BackgroundColor="#ffffff"
+             Title="Favourite Food">
+    <ContentPage.Content>
+        <ScrollView>
+            <RelativeLayout>
+                <Image HeightRequest="100" Source="foodbanner.jpg" Aspect="AspectFill"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />
+                <Frame OutlineColor="#333333" HeightRequest="50" WidthRequest="50" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=0, Constant = 15}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=0, Property=Y, Constant=60}">
+                <Image Source="avatar.jpg" Aspect="AspectFit" HeightRequest="70" WidthRequest="70" RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width, Factor=0, Constant = 15}" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Factor=0, Property=Y, Constant=60}" />
+                </Frame>
+                    <Label Text="{Binding UserInfo.Name}" FontAttributes="Bold" FontSize="26"
+            HorizontalTextAlignment="Center" RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant=120}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                           RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=X, Factor=0.5, Constant = 15}"/>
+                <StackLayout RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0,Constant=170}">
+                    <ContentView Padding="16,0,0,0" BackgroundColor="#ebebeb" HeightRequest="35">
+                        <Label Text="User Details" FontSize="Large" VerticalTextAlignment="Center" />
+                    </ContentView>
+                    <Grid Padding="16,0,16,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.Resources>
+                            <Style TargetType="Label">
+                                <Setter Property="VerticalOptions" Value="Center" />
+                            </Style>
+                        </Grid.Resources>
+
+                        <Label Text="Name:"
+                       Grid.Row="0" Grid.Column="0" />
+                        <Label Text="{Binding UserInfo.Name}"
+                        Grid.Row="0" Grid.Column="1" />
+
+                        <Label Text="Date of birth:"
+                       Grid.Row="1" Grid.Column="0" />
+                        <Label Text="{Binding UserInfo.DateOfBirth, StringFormat='{0:MM/dd/yyyy}'}"
+                       Grid.Row="1" Grid.Column="1" />
+
+                        <Label Text="Age:"
+                       Grid.Row="2" Grid.Column="0" />
+                        <Label Text="{Binding UserAge}"
+                       Grid.Row="2" Grid.Column="1" />
+
+                        <Label Text="Gender:"
+                       Grid.Row="3" Grid.Column="0" />
+                        <Label Text="{Binding UserInfo.Gender.Title}"
+                       Grid.Row="3" Grid.Column="1" />
+
+                        <Label Text="Comment:" 
+                              Grid.Row="4" Grid.Column="0" />
+                        <Label Text="{Binding UserInfo.Comment}"
+                                Grid.Row="4" Grid.Column="1"/>
+                    </Grid>
+                    <ContentView Padding="16,0,0,0" BackgroundColor="#ebebeb" HeightRequest="35">
+                        <Label Text="Favourite Food" FontSize="Large" VerticalTextAlignment="Center" />
+                    </ContentView>
+                    <StackLayout x:Name="favFoodItemsStackLayout" Padding="16">
+                        
+                    </StackLayout>
+                </StackLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
