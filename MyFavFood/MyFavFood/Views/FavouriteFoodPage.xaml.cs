@@ -23,8 +23,6 @@ namespace MyFavFood.Views
         public FavouriteFoodPage()
         {
             InitializeComponent();
-
-            ViewModel = new FavouriteFoodViewModel(new FavouriteFoodService(favFoodItemsStackLayout));
         }
 
         /// <summary>
@@ -35,6 +33,8 @@ namespace MyFavFood.Views
             base.OnAppearing();
 
             AppGlobals.Instance.CurrentPageInstance = this; // Store the current page instance
+
+            ViewModel = new FavouriteFoodViewModel(new FavouriteFoodService(favFoodItemsStackLayout));
         }
 	}
 }

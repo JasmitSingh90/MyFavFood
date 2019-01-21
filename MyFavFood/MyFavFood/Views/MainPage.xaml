@@ -6,7 +6,7 @@
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
              android:TabbedPage.ToolbarPlacement="Bottom">
 
-    <NavigationPage Title="My Fav Food" Icon="homeicon">
+    <NavigationPage Title="Home" Icon="homeicon">
         <x:Arguments>
             <local:HomePage />
         </x:Arguments>

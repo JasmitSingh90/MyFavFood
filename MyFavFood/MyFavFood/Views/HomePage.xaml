@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyFavFood.Views.HomePage"
-             Title="Home">
+             Title="My Fav Food">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Name="MenuItemMyFood" Order="Primary" Text="My Food" Command="{Binding NavigateToUserDetailsScreenCommand}" />
