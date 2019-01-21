@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyFavFood.Views.FavouriteFoodPage"
              BackgroundColor="#ffffff"
-             Title="Favourite Food">
+             Title="{Binding UserInfo.Name, StringFormat='{0}\'s Profile'}">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView> 
             <RelativeLayout>
                 <Image HeightRequest="100" Source="foodbanner.jpg" Aspect="AspectFill"
             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" />

@@ -27,6 +27,7 @@ namespace MyFavFood.Helpers.Services
         /// <param name="favFoodItemList"></param>
         public void AddFavouriteFoodItems(List<FoodItem> favFoodItemList)
         {
+            favFoodItemsStackLayout.Children.Clear(); // Remove all the childs first
             // Null check
             if (favFoodItemList != null && favFoodItemList.Count > 0)
             {
