@@ -15,7 +15,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -81,7 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyFavFood\MyFavFood.csproj">
-      <Project>{DB74225D-E04E-47BD-BED9-4B9D6EF38485}</Project>
+      <Project>{12AE1C28-D514-4E86-977F-DEA10FF4C8CA}</Project>
       <Name>MyFavFood</Name>
     </ProjectReference>
   </ItemGroup>
